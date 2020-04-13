@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    bookpage
+{% endblock %}
+
+{% block body %}
+	<div class="form-inline">
+		<div class="container" id="backdiv">
+			<a class="btn btn-primary" href="/home" role="button">Back</a>
+			{% if msg=="added" %}
+				<div class="alert alert-success" role="alert">
+				  Review Added!
+				</div>
+			{% endif %}
+		</div>
+	</div>
+	
+	<div class="container" id="bpdiv">
+		
+		<div class="row">
+		    <div class="col">
+		    	<h3>{{ result.title }}</h3>
+		    	<div class="container">
+		    		<h4>by {{ result.author }}</h4>
+					<h4>ISBN: {{ result.isbn }}</h4>
+					<h4>Year: {{ result.year }}</h4>
+					<h4>*Average Rating: {{ res['average_rating'] }}</h4>
+					<h4>*Ratings Count: {{ res['work_ratings_count'] }}</h4>
+					<p>*Goodreads data</p>
+		    	</div>
+		    	<div class="dropdown-divider"></div>
+				<div class="container">
+					<h4>Reviews</h4>
+					{% if reviews %}
+						{% for review in reviews %}
+							{% if review.rating == 1 %}
+								<img src="../static/onerating.jpg" id="rate1">
+							{% elif review.rating == 2 %}
+								<img src="../static/tworating.jpg" id="rate2">
+							{% elif review.rating == 3 %}
+								<img src="../static/threerating.jpg" id="rate3">
+							{% elif review.rating == 4 %}
+								<img src="../static/fourrating.jpg" id="rate4">
+							{% elif review.rating == 5 %}
+								<img src="../static/fiverating.jpg" id="rate5">
+							{% endif %}
+							<p>
+								{{ review.fullname }}: {{ review.review }}
+							</p>
+							
+							
+						{% endfor %}
+					{% else %}
+						<h4>No Reviews</h4>
+					{% endif %}
+				</div>
+		    </div>
+		    <div class="col">
+		    	{% if flag == 0 %}
+			    	<div class="card bg-dark text-white">
+				  		<img id="img2" src="../static/pencil.jpg" class="card-img" alt="...">
+				  		<div class="card-img-overlay">
+			  				<h5 class="card-title">Enjoyed reading the Book?<br>Leave a review.</h5>
+					    	<form method="POST" action="{{ url_for('bookpage', bookid=result.id)}}">
+					    		<div class="form-group">
+					    			<div class="form-inline">
+					    				<label for="rating">Rate this Book  :</label>
+									    <select class="form-control" id="rating" name="rating">
+									      <option value="1">One Star</option>
+									      <option value="2">Two Star</option>
+									      <option value="3">Three Star</option>
+									      <option value="4">Four Star</option>
+									      <option value="5">Five Star</option>
+									    </select>
+					    			</div>
+								    
+  								</div>
+					    		<div class="form-group">
+			    					<textarea type="text" class="form-control" id="bookreview" name="bookreview" rows="4" placeholder="add your review"></textarea>
+					    		</div>
+					    		<button type="submit" class="btn btn-warning">Submit</button>
+					    	</form>
+					    </div>
+					</div>
+				{% endif %}
+		    </div>
+		</div>
+		
+		
+	</div>
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    home
+{% endblock %}
+
+{% block body %}
+	<div class="card bg-dark text-white">
+	  <img id="searchbg" src="../static/searchbgi.png" class="card-img">
+	  <div class="card-img-overlay" id="searchdiv">
+	  	<div class="form-inline">
+	  		<h4>Readers' Place</h4>
+		  	<form method="POST" id="searchform" action="{{url_for('index')}}">
+		  		<button class="btn btn-outline-warning" id="searchbtn" type="submit">Search</button>
+			    <input class="form-control mr-sm-2" id="searchbox" type="search" name="search" placeholder="Search" aria-label="Search">
+			    <select class="form-control" name="srchparam" id="FormSelect">
+				  <option value="title">Title</option>
+				  <option value="author">Author</option>
+				  <option value="isbn">ISBN</option>
+				  <option value="year">Year</option>
+				</select>
+			</form>
+			<div id="logoutdiv">
+				<a href="/logout" class="btn btn-warning" id="logoutbtn">Logout</a>
+			</div>
+	  	</div>
+	  </div>
+	</div>
+	<div class="container">
+		{% if rows %}
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th scope="col">ISBN</th>
+					    <th scope="col">Title</th>
+					    <th scope="col">Author</th>
+					    <th scope="col">Year</th>
+					    <th scope="col">Add Review</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for row in rows %}
+						<tr>
+							<td>{{ row.isbn }}</td>
+							<td>{{ row.title }}</td>
+							<td>{{ row.author }}</td>
+							<td>{{ row.year }}</td>
+							<td>
+								<a href="{{ url_for('bookpage', bookid=row.id)}}">Review</a>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		{% else %}
+			<div class="container">
+				<div class="container" id="justadiv">
+					<h1>Some Books {{ fullname.fullname }} might like</h1>
+				</div>
+				
+				<div class="row">
+					<div class="col">
+						{% for book in book_detail %}
+							<div class="container">
+								<h3>{{ book.title }}</h3>
+								<p>by {{ book.author }}</p>
+							</div>
+						{% endfor %}
+					</div>
+					<div class="col">
+						<img src="../static/pileofbooks.png" id="img3">
+					</div>
+				</div>
+				
+					
+				
+			</div>
+			
+		{% endif %}
+
+
+	</div>
+	
+{% endblock %}

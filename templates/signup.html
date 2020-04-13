@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    home
+{% endblock %}
+
+{% block body %}
+	<div id="bdimg">
+		<div id="topdiv1">
+			<div id="lowerdiv0">
+				<form class="px-4 py-3" method="POST" action="{{ url_for('signup') }}">
+				    <div class="form-group">
+				      <label for="name">Full Name</label>
+				      <input type="text" required="required" class="form-control" name="fullname" placeholder="fullname">
+				    </div>
+				    <div class="form-group">
+					      <label for="username">Username</label>
+					      <input type="text" required="required" class="form-control" name="username" placeholder="bob">
+					    </div>
+				    <div class="form-group">
+				      <label for="password">Password</label>
+				      <input type="password" required="required" class="form-control" name="password" placeholder="Password">
+				    </div>
+				    <div class="form-group">
+				      <label for="password">Confirm Password</label>
+				      <input type="password" required="required" class="form-control" name="repassword" placeholder="Password">
+				    </div>
+				    <div class="form-group">
+				      <label for="security">Security Question</label>
+				      <input type="text" required="required" class="form-control" name="question" placeholder="where were you born?">
+				    </div>
+				    <div class="form-group">
+				      <label for="security">Security Answer</label>
+				      <input type="text" required="required" class="form-control" name="answer" placeholder="dublin">
+				    </div>
+				    <button type="submit" class="btn btn-primary">Sign up</button>
+				</form>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="{{ url_for('login') }}">Already have an id? Log in</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}
