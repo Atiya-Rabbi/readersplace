@@ -1,0 +1,42 @@
+#topdiv2, #topdiv1, #topdiv0 {
+  padding-right: 30%;
+  padding-left: 20%;
+}
+
+#topdiv0 {
+  padding-top: 100px;
+}
+
+#topdiv1 {
+  padding-top: 20px;
+}
+
+#topdiv2 {
+  padding-top: 50px;
+}
+
+#rate5, #rate4, #rate3, #rate2, #rate1 {
+  height: 20px;
+}
+
+#rate1 {
+  width: 20px;
+}
+
+#rate2 {
+  width: 40px;
+}
+
+#rate3 {
+  width: 60px;
+}
+
+#rate4 {
+  width: 80px;
+}
+
+#rate5 {
+  width: 100px;
+}
+
+/*# sourceMappingURL=cascadenstyle.css.map */

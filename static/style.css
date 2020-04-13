@@ -1,1 +1,89 @@
+body{
+	background-color: #dbc795;
+}
 
+p{
+	color: brown;
+}
+h3{
+	color: red;
+}
+
+#justadiv{
+	padding-top: 50px;
+}
+#img0{
+	width: auto;
+	height: 500px;
+}
+
+#img1{
+	width: auto;
+	height: 550px;
+}
+
+#img2{
+	width: auto;
+	height: 400px;
+}
+
+#img3{
+	width: auto;
+	height: 400px;
+}
+#bdimg{
+	background-image: url('../static/loginimg0.jpg');
+	width: auto;
+	height: 100%;
+	
+}
+
+#lowerdiv0{
+	background-color: #dbc795;
+}
+
+#searchbg, #searchdiv{
+	width: auto;
+	height: 100px;
+}
+#searchbtn, #FormSelect{
+	float: right;
+}
+
+#searchbox{
+	width: 50%;
+	height: 40px;
+	float: right;
+}
+
+#searchform{
+	padding-top: 0px;
+	float: right;
+	width: 70%;
+	height: 50px;
+	padding-bottom: 10px;
+}
+
+#logoutdiv{
+	width: 10%;
+	padding-top: 0px;
+	padding-bottom: 10px;
+	float: right;
+}
+
+#logoutbtn{
+	float: right;
+}
+
+
+
+#bpdiv{
+ 	padding-top: 100px;
+ }
+
+#backdiv{
+ 	padding-top: 20px;
+ }
+
+
+ 

@@ -1,0 +1,50 @@
+%gap{
+	
+	padding-right: 30%;
+	padding-left: 20%;
+}
+
+#topdiv0{
+	@extend %gap;
+	padding-top: 100px;
+}
+
+#topdiv1{
+	@extend %gap;
+	padding-top: 20px;
+
+}
+
+#topdiv2{
+	@extend %gap;
+	padding-top: 50px;
+}
+
+%rateimg{
+ 	height: 20px;
+ }
+
+#rate1{
+	@extend %rateimg;
+	width: 20px;
+}
+
+#rate2{
+	@extend %rateimg;
+	width: 40px;
+}
+
+#rate3{
+	@extend %rateimg;
+	width: 60px;
+}
+
+#rate4{
+	@extend %rateimg;
+	width: 80px;
+}
+
+#rate5{
+	@extend %rateimg;
+	width: 100px;
+}
